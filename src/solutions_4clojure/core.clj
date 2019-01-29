@@ -295,8 +295,8 @@ true
 
 (defn iterate*
   [f i]
-  ())
-WIP
+  (lazy-seq (cons i (iterate* f (f i)))))
+
 
 ;;; Solution Evaluation:
 
@@ -344,4 +344,39 @@ WIP
 ;;; Another Solution which make above solution look so dumb
 
 #(set (filter %2 %))
+
+
+------------------------------------------------------------------------------------------------------
+
+;;; Problem ID: 166
+
+;;; Problem Link: http://www.4clojure.com/problem/166
+
+;;; Problem Statement: Enter a function to evaluate the outer function to true.
+
+;;; (= :gt (__ < 5 1))
+;;; (= :eq (__ (fn [x y] (< (count x) (count y))) "pear" "plum"))
+;;; (= :lt (__ (fn [x y] (< (mod x 5) (mod y 5))) 21 3))
+;;; (= :gt (__ > 0 2))
+
+;;; Problem Solution:
+
+(defn compare*
+  [cmp x y]
+  (if (and  )
+    :eq
+    (if (cmp x y)
+      :lt
+      :gt)))
+
+;;; Solution Evaluation:
+
+(= :gt (compare* < 5 1))
+
+(= :eq (compare* (fn [x y] (< (count x) (count y))) "pear" "plum"))
+
+(= :lt (compare* (fn [x y] (< (mod x 5) (mod y 5))) 21 3))
+
+(= :gt (compare* > 0 2))
+
 
