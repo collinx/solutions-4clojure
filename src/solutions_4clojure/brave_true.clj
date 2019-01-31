@@ -136,17 +136,7 @@
 ;; Problem 5
 ;; Create a function that’s similar to symmetrize-body-parts except that it has to work with weird space aliens with radial symmetry. Instead of two eyes, arms, legs, and so on, they have five.
 
-(defn matching-part-alien
-  [part]
-  )
 
-((fn t
-   [part]
-   (reduce (fn [acc x]
-             (assoc acc
-                    :name (clojure.string/replace (:name part) #"^left"))) {} ["right","top","center","bottom"])) {:name "left-eye" :size 1}))
-(defn symmetrize-body-parts-alien
-  [])
 
 
 
